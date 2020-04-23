@@ -1,6 +1,6 @@
-# GrabMail
+# EmailFinder
 
-> GrabMail is a simple tool for crawling the available mails in a web page.
+> EmailFinder is a simple tool for crawling the available mails in a web page.
 
 ## Instalation
 
@@ -18,4 +18,4 @@ $ chmod +x main.py
 $ ./main.py
 ```
 
-![GrabMail](https://github.com/brokenheartz/EmailFinder/blob/master/img/screenshit.png?raw=True)
+![EmailFinder](https://github.com/brokenheartz/EmailFinder/blob/master/img/screenshit.png?raw=True)
