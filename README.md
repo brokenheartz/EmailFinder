@@ -13,6 +13,7 @@ git clone https://github.com/brokenheartz/EmailFinder.git
 ```
 $ cd EmailFinder
 $ pip3 install colorama requests tld
+$ mkdir -v saved/
 $ chmod +x main.py
 $ ./main.py
 ```
