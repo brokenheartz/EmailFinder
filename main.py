@@ -7,7 +7,7 @@ from emailfinder.email_finder import *
 color = Color()
 
 def output_format(function):
-    def banner():
+    def banner(*args, **kwargs):
         print(color.GREEN + ' _____                _ _______ _           _')
         print(color.GREEN + '|  ___|              (_) |  ___(_)         | |')
         print(color.GREEN + '| |__ _ __ ___   __ _ _| | |_   _ _ __   __| | ___ _ __')
@@ -15,8 +15,21 @@ def output_format(function):
         print(color.GREEN + '| |__| | | | | | (_| | | | |   | | | | | (_| |  __/ |')
         print(color.GREEN + '\____/_| |_| |_|\__,_|_|_\_|   |_|_| |_|\__,_|\___|_|')
         print(color.YELLOW+ '                                      [Version 1.0]\n')
-        function()
+        function(*args, **kwargs)
     return banner
+
+
+def valid_url(function): # filtering unvalid url (not with schema)
+    def check(*args, **kwargs):
+        if len(kwargs) != 0:
+            url = kwargs['url']
+        else:
+            url = args[0]
+        if not (url.startswith('http://') or url.startswith('https://')):
+            print(color.RED + current_time(), 'Please, input a valid URL.')
+        else:
+            function(*args, **kwargs)
+    return check
 
 
 @output_format
@@ -26,11 +39,10 @@ def usage():
 
 
 @output_format
-def main():
+@valid_url
+def main(url, file):
     try:
-        target = sys.argv[1]
-        file = sys.argv[2]
-        email_finder = EmailFinder(url_target = target, file_name = file)
+        email_finder = EmailFinder(url_target = url, file_name = file)
         email_finder.start_crawling()
     except KeyboardInterrupt:
         print(color.RED + current_time(), 'you stoped the program.')
@@ -47,4 +59,5 @@ if __name__ == '__main__':
         usage()
         sys.exit(0)
 
-    main()
+    url, file = sys.argv[1], sys.argv[2]
+    main(url, file)
