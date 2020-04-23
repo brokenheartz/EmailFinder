@@ -1,6 +1,6 @@
 # GrabMail
 
-> GrabMail is a simple tool for crawl the available mail in a web page.
+> GrabMail is a simple tool for crawling the available mails in a web page.
 
 ## Instalation
 
