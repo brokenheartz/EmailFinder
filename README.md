@@ -1,5 +1,18 @@
-<img src='https://www.photobox.co.uk/my/photo/full?photo_id=502912708494' title='GrabMail' alt='GrabMail'>
-
 # GrabMail
 
 > GrabMail is a simple tool for crawl the available mail in a web page.
+
+## Instalation
+
+### clone
+```
+git clone https://github.com/brokenheartz/EmailFinder.git
+```
+
+### usage
+```
+$ cd EmailFinder
+$ pip3 install colorama requests tld
+$ chmod +x main.py
+$ ./main.py
+```
