@@ -1,3 +1,5 @@
+![GrabMail](https://github.com/brokenheartz/EmailFinder/blob/master/img/screenshit.png?raw=True)
+
 # GrabMail
 
 > GrabMail is a simple tool for crawling the available mails in a web page.
